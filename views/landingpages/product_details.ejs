@@ -1,0 +1,238 @@
+<product_section>
+    <div class="container">
+        <!--Body content-->
+            <%- partial('../includes/breadcrumbs') %>
+        <!-- bread_crumb -->
+        <div class="prod_dt_top">
+            <div class="row">
+                <div class="col-lg-5 col-md-5 col-sm-12">
+                    <div class="product_box">
+                        <div class="prod_thumb zoom-desc">
+                            <ul><%productImg.forEach(function(image){%>
+                                <li class="thumbAc">
+                                    <a href="" class='cloud-zoom-gallery' title='Red' rel="useZoom: 'zoom1', smallImage: 'static/images/prod_pic1.jpg' "><img class="zoom-tiny-image" src="<%=image.thumpnail%>" width="85" height="85" alt = "Thumbnail 1"/></a>
+                                </li>
+                                <%});%>
+                            </ul>
+                        </div>
+                         
+                        <div class="prod_main_pic prod_main_wrap">
+                            <div class="zoom-small-image prod_main_pic">
+                                <a href='static/images/prod_pic1.jpg' class = 'cloud-zoom' id='zoom1' rel="adjustX:10, adjustY:-4"> <img src="<%=productDtl.product.profile_image%>" alt='' title="" />
+                                </a>
+                            </div>
+                            <div class="ftr social_media">
+                                <div class="ftr_links last">
+                                    <ul>
+                                        <li class="social_links">
+                                            <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                            <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                            <a href=""><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+                                            <a href=""><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-12">
+                    <div class="prod_right_cont">
+                        <div class="heading">
+                            <h1><%=productDtl.product.product_name%></h1>
+                            <span><i class="like"></i></span>
+                        </div>
+                        <div class="price_section">
+                            <div class="row">
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="price_left">
+                                        <strong>$<%=productDtl.product.product_price%></strong>
+                                        <strike>$<%=productDtl.product.actual_price%></strike>
+                                        <small>(<%=productDtl.product.discount_rate%>% OFF)</small>
+                                    </div>
+                                </div>
+                                <!--<div class="col-lg-6 col-sm-6">
+                                    <div class="price_right">
+                                        <span>Delivery within 5 - 7 days</span>
+                                    </div>
+                                </div>-->
+                            </div>
+                        </div>                     
+                        <!--<div class="size_section">
+                            <span>Select Size</span>
+                            <small>Note Sure ? <strong>See Size Chart</strong></small>
+                        </div>
+                        <div class="sizes_hoder">
+                            <ul>
+                                <li><span>xs</span></li>
+                                <li><span>S</span></li>
+                                <li class="active"><span>M</span></li>
+                                <li><span>L</span></li>
+                                <li><span>XL</span></li>
+                                <li><span>XXL</span></li>
+                            </ul>
+                        </div>-->
+                        <div class="prod_dt_btns">
+                            <a href="#" class="btns button">Buy Now</a>
+                            <a href="#" class="btns button2 js-add-cart" quantity="1" productId="<%=productDtl.product.product_id%>" shopId="<%=productDtl.product.store_id%>" price="<%=productDtl.product.product_price%>">Add to Cart</a>
+                        </div>
+                        <div class="prod_serv">
+                            <ul>
+                                <li><span><img src="images/service_icon1.png" alt=""></span><small>24/7 CUSTOMER SERVICE</small></li>
+                                <li><span><img src="images/service_icon2.png" alt=""></span><small>FAST SHIPPING 
+    WITHIN GTA</small></li>
+                                <li><span><img src="images/service_icon3.png" alt=""></span><small>MONEY BACK 
+    GUARATEE!</small></li>
+                            </ul>
+                        </div>
+                        <div class="prod_dtls">
+                            <h3>Product Details:</h3>
+                            <ul>
+                                <li><strong>Product Model:</strong><span><%=productDtl.product.product_model%></span></li>
+                                <li><strong>Sold by: </strong><span><%=productDtl.product.store_name%></span></li>
+                            </ul>
+                            <h3>Product Features:</h3>
+                            
+                            <ul><%productDtl.features.forEach(function(feature){%>
+                                <li><strong><%=feature.key%>:</strong><span><%=feature.value%></span></li>
+                                <%});%>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             
+        </div>
+    </div>
+ </product_section>   
+   
+    <!--TRENDING STORES-->
+<section>
+        <div class="container">
+            <div class="similar_prod secpad ">
+              
+              <h1>SIMILAR PRODUCTS</h1>
+              <small>People also saw these</small>
+               
+                <div class="search_products_holder" >
+                    <div id="similar_products">
+                       
+                        <div class="semi_prod_box col-lg-3 col-md-3">
+                           <div class="each_product">
+                                        <div class="pro_img_holder">
+                                            <a href="">
+                                                <img src="images/product_one.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="product_detail">
+                                            <ul class="pro_heading">
+                                                <li><h4>Blue Half Saree</h4></li>
+                                                <li><a href=""><span><i class="like"></i></span></a></li>
+                                            </ul>
+                                            <ul class="pro_review">
+                                                <li><a href=""><span><i class="fa fa-eye" aria-hidden="true"></i></span>300</a></li>
+                                                <li><a href=""><span><i class="fa fa-heart-o" aria-hidden="true"></i></span>50</a></li>
+                                                <li>
+                                                    2 days ago
+                                                </li>
+                                            </ul>
+                                            <ul class="pro_buy">
+                                                <li><span>$75.00</span></li>
+                                                <li><span><strike>$75.00</strike></span></li>
+                                                <li><a href="" class="btn buy_btn">Buy Now</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                        </div>
+                         
+                         <div class="semi_prod_box col-lg-3 col-md-3">
+                           <div class="each_product">
+                                        <div class="pro_img_holder">
+                                            <a href="">
+                                                <img src="images/product_one.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="product_detail">
+                                            <ul class="pro_heading">
+                                                <li><h4>Blue Half Saree</h4></li>
+                                                <li><a href=""><span><i class="like"></i></span></a></li>
+                                            </ul>
+                                            <ul class="pro_review">
+                                                <li><a href=""><span><i class="fa fa-eye" aria-hidden="true"></i></span>300</a></li>
+                                                <li><a href=""><span><i class="fa fa-heart-o" aria-hidden="true"></i></span>50</a></li>
+                                                <li>
+                                                    2 days ago
+                                                </li>
+                                            </ul>
+                                            <ul class="pro_buy">
+                                                <li><span>$75.00</span></li>
+                                                <li><span><strike>$75.00</strike></span></li>
+                                                <li><a href="" class="btn buy_btn">Buy Now</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                        </div>
+                        
+                        <div class="semi_prod_box col-lg-3 col-md-3">
+                           <div class="each_product">
+                                        <div class="pro_img_holder">
+                                            <a href="">
+                                                <img src="images/product_one.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="product_detail">
+                                            <ul class="pro_heading">
+                                                <li><h4>Blue Half Saree</h4></li>
+                                                <li><a href=""><span><i class="like"></i></span></a></li>
+                                            </ul>
+                                            <ul class="pro_review">
+                                                <li><a href=""><span><i class="fa fa-eye" aria-hidden="true"></i></span>300</a></li>
+                                                <li><a href=""><span><i class="fa fa-heart-o" aria-hidden="true"></i></span>50</a></li>
+                                                <li>
+                                                    2 days ago
+                                                </li>
+                                            </ul>
+                                            <ul class="pro_buy">
+                                                <li><span>$75.00</span></li>
+                                                <li><span><strike>$75.00</strike></span></li>
+                                                <li><a href="" class="btn buy_btn">Buy Now</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                        </div>
+                        
+                        
+                        <div class="semi_prod_box col-lg-3 col-md-3">
+                           <div class="each_product">
+                                        <div class="pro_img_holder">
+                                            <a href="">
+                                                <img src="images/product_one.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="product_detail">
+                                            <ul class="pro_heading">
+                                                <li><h4>Blue Half Saree</h4></li>
+                                                <li><a href=""><span><i class="like"></i></span></a></li>
+                                            </ul>
+                                            <ul class="pro_review">
+                                                <li><a href=""><span><i class="fa fa-eye" aria-hidden="true"></i></span>300</a></li>
+                                                <li><a href=""><span><i class="fa fa-heart-o" aria-hidden="true"></i></span>50</a></li>
+                                                <li>
+                                                    2 days ago
+                                                </li>
+                                            </ul>
+                                            <ul class="pro_buy">
+                                                <li><span>$75.00</span></li>
+                                                <li><span><strike>$75.00</strike></span></li>
+                                                <li><a href="" class="btn buy_btn">Buy Now</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--TRENDING STORES-->
+</div>

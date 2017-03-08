@@ -1,0 +1,150 @@
+<section>
+   <div class="cart_detail secpad">
+      <div class="container">
+         <div class="cart_detail_holder">
+            <div class="row">
+               <div class="col-md-8">
+                  <div class="left_cart_detail">
+                    <div class="cart_deatil_header">
+                       <h3>My cart (<%=cartCount%> Items)</h3>
+                       <!--<p>Total $1,679</p>-->
+                    </div>
+
+                    <%cartHome.forEach(function(cartData){%> 
+                        <h3>From Store : <%=cartData.store_name%></h3>
+                        <%cartData.products.forEach(function(product){%>
+                        <div class="cart_item_holder">
+                            <div class="item_pic">
+                              <img src="<%=product.thumbnail%>" alt="">
+                            </div>
+                            <div class="item_detail">
+                               <ul>
+                                  <li>
+                                     <h4><%=product.product_name%></h4>
+                                  </li>
+                                  <li>
+                                     <h4>$ <%=product.price%></h4>
+                                  </li>
+                               </ul>
+                               <!--<ul>
+                                  <li>
+                                     <p>Size: LQty: 1</p>
+                                     <p>Sold by: Health & Happiness Pvt Ltd</p>
+                                  </li>
+                                  <li>
+                                     <p>(50% OFF) <strike> $ 1,699</strike></p>
+                                  </li>
+                               </ul>-->
+                               <ul class="product_action">
+                                  <li><a href="">Edit Items</a></li>
+                                  <li><a href="">Remove</a></li>
+                               </ul>
+                            </div>
+                        </div>
+                        <%});%>
+                     <%});%>
+                     <!--<div class="item_size_holder">
+                        <h4>AKS Red Printed Anarkali Kurta</h4>
+                        <div class="size_guide">
+                           <p>Size: </p>
+                           <ul>
+                              <li><a href="">S</a></li>
+                              <li><a href="">M</a></li>
+                              <li class="active"><a href="">L</a></li>
+                              <li><a href="">XL</a></li>
+                              <li class="betline">XXL</li>
+                              <li>
+                                 <p>Qty</p>
+                                 <input type="number" class="qnty" value="1">
+                              </li>
+                           </ul>
+                           <ul>
+                              <li><button>Cancel</button></li>
+                              <li><button class="default_btn">Save</button></li>
+                           </ul>
+                        </div>
+                     </div>-->
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="right_cart_detail">
+                     <div class="each_option_sec">
+                        <h3>Options</h3>
+                        <h4>Coupons</h4>
+                        <p><a href="">Log in</a> to use account-linked coupons</p>
+                     </div>
+                     <div class="each_option_sec price_detail">
+                        <ul>
+                           <li>
+                              <h3>Gift wrap for $ 25</h3>
+                              <p>Cash On Delivery not available</p>
+                           </li>
+                           <li>
+                              <span>
+                              <input id="check" name="toppings" value="" type="checkbox">
+                              <label for="check"></label>
+                              </span>
+                           </li>
+                        </ul>
+                        <ul class="heading_price">
+                           <li>
+                              <h3>Price Details</h3>
+                           </li>
+                        </ul>
+                        <div class="summary">
+                           <ul>
+                              <li>
+                                 <p>Bag Total</p>
+                              </li>
+                              <li>
+                                 <p>$ 3,198</p>
+                              </li>
+                           </ul>
+                           <ul>
+                              <li>
+                                 <p>Bag Discount-</p>
+                              </li>
+                              <li>
+                                 <p class="brown_text">$ 1,599</p>
+                              </li>
+                           </ul>
+                           <ul>
+                              <li>
+                                 <p>Estimated VAT/CST</p>
+                              </li>
+                              <li>
+                                 <p>$ 80</p>
+                              </li>
+                           </ul>
+                           <ul>
+                              <li>
+                                 <p>Coupon Discount</p>
+                              </li>
+                              <li>
+                                 <p class="blue_text">Apply Coupon</p>
+                              </li>
+                           </ul>
+                           <ul>
+                              <li>
+                                 <p>Delivery </p>
+                              </li>
+                              <li>
+                                 <p class="green_text">Free</p>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="order_total">
+                        <div class="order_head">
+                           <h3>Order Total</h3>
+                           <h3>$ 1,679</h3>
+                        </div>
+                        <input type="button" class="blue_solid_btn" name="" value="Place Order">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>

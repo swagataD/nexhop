@@ -1,0 +1,85 @@
+<div class="body_content">
+    <!--Body content-->
+    <section>
+       <!-- bread_crumb -->
+       <div class="container">
+          <%- partial('../includes/breadcrumbs') %>
+       </div>
+    </section>
+    <!-- bread_crumb -->
+    <section>
+       <div class="product_listing secpad">
+          <div class="container">
+             <div class="product_holder">
+                <div class="row">
+                   <div class="">
+                      <div class="product_listing_header">
+                         <div class="product_nav">
+                            <div class="item_title">
+                               <h1>Product List (<%=productList.product.length%>) Items</h1>
+                            </div>
+                            <div class="product_filter">
+                               <ul>
+                                  <li>View: </li>
+                                  <li><a href=""><img src="images/grid1.png" alt=""></a></li>
+                                  <li><a href=""><img src="images/grid2.png" alt=""></a></li>
+                               </ul>
+                               <ul>
+                                  <li>Sort: </li>
+                                  <li><a href="">Popularity</a></li>
+                               </ul>
+                               <ul>
+                                  <li>Price: </li>
+                                  <li><a href="">Low</a></li>
+                                  <li><a href="">High</a></li>
+                               </ul>
+                            </div>
+                         </div>
+                        </div>
+                        <div class="search_products_holder">
+                            <%productList.product.forEach(function(product){%>
+                                <div class="col-sm-6 col-md-6 col-lg-4 col-xs-6">
+                                    <div class="each_product">
+                                       <div class="pro_img_holder">
+                                          <a href="<%=sails.config.globals.siteGeneral.baseUrl%>/product-details/<%=product.store_id%>/<%=product.product_id%>">
+                                          <img src="<%=product.thumpnail%>" alt="">
+                                          </a>
+                                       </div>
+                                       <div class="product_detail">
+                                          <ul class="pro_heading">
+                                             <li>
+                                                <h4><%=product.product_name%></h4>
+                                             </li>
+                                             <!--<li><a href=""><span><i class="like"></i></span></a></li>-->
+                                          </ul>
+                                          <!--<ul class="pro_review">
+                                             <li><a href=""><span><i class="fa fa-eye" aria-hidden="true"></i></span>300</a></li>
+                                             <li><a href=""><span><i class="fa fa-heart-o" aria-hidden="true"></i></span>50</a></li>
+                                             <li>
+                                                2 days ago
+                                             </li>
+                                          </ul>-->
+                                          <ul class="pro_buy">
+                                             <li><span>$<%=product.product_price%></span></li>
+                                             <li><span><strike>$<%=product.actual_price%></strike></span></li>
+                                             <li><a href="" class="btn buy_btn">Buy Now</a></li>
+                                          </ul>
+                                       </div>
+                                    </div>
+                                </div>
+                            <%});%>
+                            
+                            
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section> 
+    <!-- Filter Panel -->
+    <%- partial('../includes/filter_panel') %>
+    <!-- Filter Panel -->
+</div>
+<!--Body content-->

@@ -1,0 +1,228 @@
+<div class="body_content">
+    <!--Body content-->
+    <section>
+       <!-- bread_crumb -->
+       <div class="container">
+          <%- partial('../includes/breadcrumbs') %>
+       </div>
+    </section>
+    <!-- bread_crumb -->
+    <section>
+       <div class="product_listing secpad">
+          <div class="container">
+             <div class="product_holder">
+                <div class="row">
+                   <div class="col-md-4 col-lg-3">
+                      <div class="left_panel">
+                         <div class="logo_side desk">
+                            <img src="<%=storeDetail[0].profile_image%>" alt="#">
+                         </div>
+                         <div class="about_shop">
+                            <div class="review_row">
+                               <h3><%=storeDetail[0].store_name%></h3>
+                               <strong><i class="fa fa-star" aria-hidden="true"></i> <%=storeDetail[0].rating%></strong>
+                            </div>
+                            <div class="logo_cont">
+                               <div class="logo_side mob">
+                                  <img src="images/logo_side.png" alt="#">
+                               </div>
+                               <p><%=storeDetail[0].address%></p>
+                            </div>
+                         </div>
+                         <!--<a href="#" class="see_policy">See Policies <i class="fa fa-angle-right"></i></a>
+                         <div class="each_category desktop">
+                            <h2>Category</h2>
+                            <ul>
+                               <li>
+                                  <span>
+                                  <input id="for_men" type="checkbox" name="toppings" value="">
+                                  <label for="for_men">For Men</label>
+                                  </span>
+                                  <ul>
+                                     <li>
+                                        <span>
+                                        <input id="tshirt" type="checkbox" name="toppings" value="">
+                                        <label for="tshirt">T-Shirt</label>
+                                        </span>
+                                     </li>
+                                     <li>
+                                        <span>
+                                        <input id="casual_shirt" type="checkbox" name="toppings" value="">
+                                        <label for="casual_shirt">Casual Shirt</label>
+                                        </span>
+                                     </li>
+                                     <li>
+                                        <span>
+                                        <input id="formal_shirt" type="checkbox" name="toppings" value="">
+                                        <label for="formal_shirt">Formal Shirt</label>
+                                        </span>
+                                     </li>
+                                  </ul>
+                               </li>
+                            </ul>
+                            <ul>
+                               <li>
+                                  <span>
+                                  <input id="for_women" type="checkbox" name="toppings" value="">
+                                  <label for="for_women">For Women</label>
+                                  </span>
+                                  <ul>
+                                     <li>
+                                        <span>
+                                        <input id="designer_sarees" type="checkbox" name="toppings" value="">
+                                        <label for="designer_sarees">Designer Sarees</label>
+                                        </span>
+                                     </li>
+                                     <li>
+                                        <span>
+                                        <input id="salwars" type="checkbox" name="toppings" value="">
+                                        <label for="salwars">Salwars</label>
+                                        </span>
+                                     </li>
+                                     <li>
+                                        <span>
+                                        <input id="lenghas" type="checkbox" name="toppings" value="">
+                                        <label for="lenghas">Lenghas</label>
+                                        </span>
+                                     </li>
+                                  </ul>
+                               </li>
+                            </ul>
+                            <ul>
+                               <li>
+                                  <span>
+                                  <input id="for_kids" type="checkbox" name="toppings" value="">
+                                  <label for="for_kids">For Kids</label>
+                                  </span>
+                                  <ul>
+                                     <li>
+                                        <span>
+                                        <input id="t-shirt_kids" type="checkbox" name="toppings" value="">
+                                        <label for="t-shirt_kids">T-Shirt</label>
+                                        </span>
+                                     </li>
+                                     <li>
+                                        <span>
+                                        <input id="casual_shirt_kids" type="checkbox" name="toppings" value="">
+                                        <label for="casual_shirt_kids">Casual Shirt</label>
+                                        </span>
+                                     </li>
+                                     <li>
+                                        <span>
+                                        <input id="jeans" type="checkbox" name="toppings" value="">
+                                        <label for="jeans">Jeans</label>
+                                        </span>
+                                     </li>
+                                  </ul>
+                               </li>
+                            </ul>
+                         </div>-->
+                         <!--<div class="each_category brand">
+                            <h2>Brands</h2>
+
+                            <ul>
+                                <li>
+                                    <span>
+                                    <input id="anouk" type="checkbox" name="toppings" value="">
+                                        <label for="anouk">Anouk</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                    <input id="shree" type="checkbox" name="toppings" value="">
+                                        <label for="shree">Shree</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                    <input id="libas" type="checkbox" name="toppings" value="">
+                                        <label for="libas">Libas</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                    <input id="rain&rainbow" type="checkbox" name="toppings" value="">
+                                        <label for="rain&rainbow">Rain & Rainbow</label>
+                                    </span>
+                                </li>
+                            </ul>
+                            </div>-->
+                      </div>
+                   </div>
+                   <div class="col-md-8 col-lg-9">
+                      <div class="product_listing_header">
+                         <div class="product_nav">
+                            <div class="item_title">
+                               <h1>Store Items -</h1>
+                               <p><%=storeProduct.length%> Items</p>
+                            </div>
+                            <div class="product_filter">
+                               <ul>
+                                  <li>View: </li>
+                                  <li><a href=""><img src="images/grid1.png" alt=""></a></li>
+                                  <li><a href=""><img src="images/grid2.png" alt=""></a></li>
+                               </ul>
+                               <ul>
+                                  <li>Sort: </li>
+                                  <li><a href="">Popularity</a></li>
+                               </ul>
+                               <ul>
+                                  <li>Price: </li>
+                                  <li><a href="">Low</a></li>
+                                  <li><a href="">High</a></li>
+                               </ul>
+                            </div>
+                         </div>
+                      </div>
+                      <!--<div class="filter_option">
+                         <div class="alert alert-info">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong>Kurta</strong>
+                         </div>
+                      </div>-->
+                      <div class="search_products_holder shop_prod_list">
+                         <div class="row">
+                            <%storeProduct.forEach(function(product){%>
+                                <div class="col-sm-6 col-md-6 col-lg-4 col-xs-6">
+                                    <div class="each_product">
+                                       <div class="pro_img_holder">
+                                          <a href="">
+                                          <img src="<%=product.thumpnail%>" alt="">
+                                          </a>
+                                       </div>
+                                       <div class="product_detail">
+                                          <ul class="pro_heading">
+                                             <li>
+                                                <h4><%=product.product_name%></h4>
+                                             </li>
+                                             <li><a href=""><span><i></i></span></a></li>
+                                          </ul>
+                                          <!--<ul class="pro_review">
+                                             <li><a href=""><span><i class="fa fa-eye" aria-hidden="true"></i></span>300</a></li>
+                                             <li><a href=""><span><i class="fa fa-heart-o" aria-hidden="true"></i></span>50</a></li>
+                                             <li>
+                                                2 days ago
+                                             </li>
+                                          </ul>-->
+                                          <ul class="pro_buy">
+                                             <li><span>$<%=product.product_price%></span></li>
+                                             <li><span><strike>$<%=product.actual_price%></strike></span></li>
+                                             <li><a href="" class="btn buy_btn">Buy Now</a></li>
+                                          </ul>
+                                       </div>
+                                    </div>
+                                 </div>
+                            <%});%>
+                        </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section> 
+    <!-- Filter Panel -->
+    <%- partial('../includes/filter_panel') %>
+    <!-- Filter Panel -->
+</div>
+<!--Body content-->

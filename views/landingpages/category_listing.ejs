@@ -1,0 +1,99 @@
+<div class="body_content">
+    <!--Body content-->
+    <section>
+       <!-- bread_crumb -->
+       <div class="container">
+          <%- partial('../includes/breadcrumbs') %>
+       </div>
+    </section>
+    <!-- bread_crumb -->
+
+
+<section class="carousel_product_holder">
+    <div class="container">
+        <h1>Sub categories</h1>
+        <div class="responsive">
+            <%subCatData.items.forEach(function(subCat){%>
+            <div class="each_product">
+                <a href="<%=sails.config.globals.siteGeneral.baseUrl%>/product-list/<%=subCat.category_id%>">
+                    <span class="pro_img"><img src="<%=subCat.category_image%>" alt="" class="img-responsive"></span></a>
+                <span class="pro_detail">
+                    <h3><%=subCat.category_name%></h3>
+                </span>
+            </div>
+            <%});%>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>New Arrival</h1>
+        <div class="responsive">
+            <%newArrivalData.items.forEach(function(newArrival){%>
+            <div class="each_product">
+                <a href="<%=sails.config.globals.siteGeneral.baseUrl%>/product-list/<%=newArrival.category_id%>">
+                    <span class="pro_img"><img src="<%=newArrival.thumpnail%>" alt="" class="img-responsive"></span></a>
+                <span class="pro_detail">
+                    <ul class="pro_heading">
+                        <li>
+                           <h3><%=newArrival.product_name%></h3>
+                        </li>
+                    </ul>
+
+                    <ul class="pro_buy">
+                        <li><span>$<%=newArrival.product_price%></span></li>
+                        <li><span><strike>$<%=newArrival.actual_price%></strike></span></li>
+                        <li><a href="" class="btn buy_btn">Buy Now</a></li>
+                    </ul>
+                </span>
+            </div>
+            <%});%>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Best Seller</h1>
+        <div class="responsive">
+            <%bestSellerData.items.forEach(function(bestSeller){%>
+            <div class="each_product">
+                <a href="<%=sails.config.globals.siteGeneral.baseUrl%>/product-list/<%=bestSeller.category_id%>">
+                    <span class="pro_img"><img src="<%=bestSeller.thumpnail%>" alt="" class="img-responsive"></span></a>
+                <span class="pro_detail">
+                    <ul class="pro_heading">
+                        <li>
+                           <h3><%=bestSeller.product_name%></h3>
+                        </li>
+                    </ul>
+                    <ul class="pro_buy">
+                        <li><span>$<%=bestSeller.product_price%></span></li>
+                        <li><span><strike>$<%=bestSeller.actual_price%></strike></span></li>
+                        <li><a href="" class="btn buy_btn">Buy Now</a></li>
+                    </ul>
+                </span>
+            </div>
+            <%});%>
+        </div>
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Filter Panel -->
+    <%- partial('../includes/filter_panel') %>
+    <!-- Filter Panel -->
+</div>
+<!--Body content-->

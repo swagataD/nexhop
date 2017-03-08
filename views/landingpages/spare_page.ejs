@@ -1,0 +1,106 @@
+
+
+
+
+
+
+
+    <section>
+       <div class="product_listing secpad">
+          <div class="container">
+             <div class="product_holder">
+                <div class="row">
+                      <div class="product_listing_header">
+                       
+                            <h2>Sub categories</h2>
+
+                            <div class="search_products_holder">
+                            <div class="row">
+                            <%subCatData.items.forEach(function(subCat){%>
+                                <div class="col-sm-6 col-md-6 col-lg-4 col-xs-6">
+                                   <div class="each_product">
+                                      <div class="pro_img_holder">
+                                         <a href="<%=sails.config.globals.siteGeneral.baseUrl%>/product-list/<%=subCat.category_id%>">
+                                         <img src="<%=subCat.category_image%>" alt="">
+                                         </a>
+                                      </div>
+                                      <div class="product_detail">
+                                         <ul class="pro_heading">
+                                            <li>
+                                               <h4><%=subCat.category_name%></h4>
+                                            </li>
+                                         </ul>
+                                      </div>
+                                   </div>
+                                </div>
+                            <%});%>
+                            </div>
+                            </div>
+                       </div>
+                        <div class="product_listing_header">
+                            
+                            <h2>New Arrival</h2>
+                            <div class="search_products_holder">
+                                <%newArrivalData.items.forEach(function(newArrival){%>
+                                <div class="col-sm-6 col-md-6 col-lg-4 col-xs-6">
+                                   <div class="each_product">
+                                      <div class="pro_img_holder">
+                                         <a href="<%=sails.config.globals.siteGeneral.baseUrl%>/product-list/<%=newArrival.category_id%>">
+                                         <img src="<%=newArrival.thumpnail%>" alt="">
+                                         </a>
+                                      </div>
+                                      <div class="product_detail">
+                                         <ul class="pro_heading">
+                                            <li>
+                                               <h4><%=newArrival.product_name%></h4>
+                                            </li>
+                                         </ul>
+
+                                         <ul class="pro_buy">
+                                            <li><span>$<%=newArrival.product_price%></span></li>
+                                            <li><span><strike>$<%=newArrival.actual_price%></strike></span></li>
+                                            <li><a href="" class="btn buy_btn">Buy Now</a></li>
+                                         </ul>
+                                      </div>
+                                   </div>
+                                </div>
+                                <%});%>
+                            </div>
+                        </div>
+                         
+                        <div class="product_listing_header">
+                            <h2>Best Sellers</h2>
+                            <div class="search_products_holder">
+                                <%bestSellerData.items.forEach(function(bestSeller){%>
+                                <div class="col-sm-6 col-md-6 col-lg-4 col-xs-6">
+                                   <div class="each_product">
+                                      <div class="pro_img_holder">
+                                         <a href="<%=sails.config.globals.siteGeneral.baseUrl%>/product-list/<%=bestSeller.category_id%>">
+                                         <img src="<%=bestSeller.thumpnail%>" alt="">
+                                         </a>
+                                      </div>
+                                      <div class="product_detail">
+                                         <ul class="pro_heading">
+                                            <li>
+                                               <h4><%=bestSeller.product_name%></h4>
+                                            </li>
+                                         </ul>
+
+                                         <ul class="pro_buy">
+                                            <li><span>$<%=bestSeller.product_price%></span></li>
+                                            <li><span><strike>$<%=bestSeller.actual_price%></strike></span></li>
+                                            <li><a href="" class="btn buy_btn">Buy Now</a></li>
+                                         </ul>
+                                      </div>
+                                   </div>
+                                </div>
+                                <%});%>
+                            </div>
+                        </div>
+
+                      
+                </div>
+             </div>
+          </div>
+       </div>
+    </section> 

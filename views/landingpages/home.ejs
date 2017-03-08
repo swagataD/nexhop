@@ -1,0 +1,645 @@
+<section class="main_header">
+   <!-- main header -->
+   <div class="container">
+      <div class="row">
+         <div class="left_item_holder">
+            <div class="left_panel_header">
+               <ul>
+                  <li><img src="images/home_icon.png" alt=""></li>
+                  <li>Shop By  Categories</li>
+               </ul>
+            </div>
+            <div class="left_panel_body">
+               <ul>
+                    <% categories.forEach(function(category){%>
+                        <li><a href="<%=sails.config.globals.siteGeneral.baseUrl%>/subcat-list/<%=category.category_id%>"><span><img src="<%=category.category_image%>" alt=""></span><small><%=category.category_name%></small></a></li>
+                    <% }); %>
+               </ul>
+            </div>
+         </div>
+         <div class="right_banner_holder" >
+            <div class="col-sm-9 col-xs-9">
+               <div class="banner_holder">
+                  <div class="main_banner">
+                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                           <li data-target="#myCarousel" data-slide-to="1"></li>
+                           <li data-target="#myCarousel" data-slide-to="2"></li>
+                           <li data-target="#myCarousel" data-slide-to="3"></li>
+                        </ol>
+                        <!-- Wrapper for slides -->
+                        <div class="top_banner">
+                            <%banner.forEach(function(ban){%>
+                                <div class="item active">
+                                   <img src="<%=ban.banner_url%>" alt="" onerror="bannerError(this);">
+                                </div>                            
+                            <%});%>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-sm-3 col-xs-3">
+               <div class="add_banner">
+                  <a href=""><img src="images/right_banner.jpg" alt=""></a>
+               </div>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+                <div class="product_holder">
+                    <h1>Latest Products</h1>
+                    <div class="">
+                    <ul class="product_item_04 lt_product">
+                        <% products.forEach(function(product){%>
+                        <li class="each_product">                            
+                            <a href="<%=sails.config.globals.siteGeneral.baseUrl%>/product-details/<%=product.store_id%>/<%=product.product_id%>"><span class="pro_img"><img src="<%=product.thumpnail%>" alt="product" class="img-responsive"></span></a>
+                            <span class="pro_detail">
+                                <h3><%=product.product_name%></h3>
+                                <ul class="btm_pro_detail">
+                                    <li class="rating">
+                                        <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                                        <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                                        <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                                        <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                                        <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                                    </li>
+                                    <li>
+                                        <h2>$ <%=product.product_price%></h2>
+                                    </li>
+                                    <li></li>
+                                    <li class="">
+                                        <a href="#" class="add_cart_btn js-add-cart" quantity="1" productId="<%=product.product_id%>" shopId="<%=product.store_id%>" price="<%=product.product_price%>" ><span><i class="fa fa-shopping-cart " aria-hidden="true"></i></span></a>
+                                    </li>                                    
+                                </ul>
+                            </span>
+                        </li>
+                        <% }); %>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- main header -->
+<section class="mdl_add_holder">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-3 col-sm-3 col-xs-3">
+            <div class="add_banners">
+               <a href=""><img src="images/banner_01.jpg" alt=""></a>
+            </div>
+         </div>
+         <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="add_banners">
+               <a href=""><img src="images/banner_02.jpg" alt=""></a>
+            </div>
+         </div>
+         <div class="col-md-3 col-sm-3 col-xs-3">
+            <div class="add_banners">
+               <a href=""><img src="images/banner_03.jpg" alt=""></a>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<section class="store_holder">
+   <div class="container">
+        <div class="row responsive">
+            <% stores.forEach(function(store){ %>
+            <div class="col-md-3 col-sm-3 col-xs-6">
+               <div class="each_store"> 
+               <a href="<%=sails.config.globals.siteGeneral.baseUrl%>/productlist/<%=store.store_id%>">
+                  
+                     <figure><img src="<%=store.profile_image%>" onerror="imgError(this);" class="img-size"></figure>
+
+                     <h2><%=store.store_name%></h2>
+                     <p>Rating: <span><i class="fa fa-star"></i></span></p>
+               </a>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+   </div>
+</section>
+<section class="carousel_product_holder">
+   <div class="container">
+      <h1>You Might Be Interest In</h1>
+      <div class="responsive">
+         <div class="each_product">
+            <a href=""><span class="pro_img"><img src="images/product_02.png" alt="product" class="img-responsive"></span></a>
+            <span class="pro_detail">
+               <h3>Zook Rocker 2 Wireless</h3>
+               <ul class="btm_pro_detail">
+                  <li class="rating">
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                  </li>
+                  <li>
+                     <h2>$ 229</h2>
+                  </li>
+                  <li></li>
+                  <li>
+                     <a href="" class="add_cart_btn"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+                  </li>
+               </ul>
+            </span>
+         </div>
+         <div class="each_product">
+            <a href=""><span class="pro_img"><img src="images/product_01.png" alt="product" class="img-responsive"></span></a>
+            <span class="pro_detail">
+               <h3>Zook Rocker 2 Wireless</h3>
+               <ul class="btm_pro_detail">
+                  <li class="rating">
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                  </li>
+                  <li>
+                     <h2>$ 229</h2>
+                  </li>
+                  <li></li>
+                  <li>
+                     <a href="" class="add_cart_btn"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+                  </li>
+               </ul>
+            </span>
+         </div>
+         <div class="each_product">
+            <a href=""><span class="pro_img"><img src="images/product_03.png" alt="product" class="img-responsive"></span></a>
+            <span class="pro_detail">
+               <h3>Zook Rocker 2 Wireless</h3>
+               <ul class="btm_pro_detail">
+                  <li class="rating">
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                  </li>
+                  <li>
+                     <h2>$ 229</h2>
+                  </li>
+                  <li></li>
+                  <li>
+                     <a href="" class="add_cart_btn"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+                  </li>
+               </ul>
+            </span>
+         </div>
+         <div class="each_product">
+            <a href=""><span class="pro_img"><img src="images/product_02.png" alt="product" class="img-responsive"></span></a>
+            <span class="pro_detail">
+               <h3>Zook Rocker 2 Wireless</h3>
+               <ul class="btm_pro_detail">
+                  <li class="rating">
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                  </li>
+                  <li>
+                     <h2>$ 229</h2>
+                  </li>
+                  <li></li>
+                  <li>
+                     <a href="" class="add_cart_btn"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+                  </li>
+               </ul>
+            </span>
+         </div>
+         <div class="each_product">
+            <a href=""><span class="pro_img"><img src="images/product_03.png" alt="product" class="img-responsive"></span></a>
+            <span class="pro_detail">
+               <h3>Zook Rocker 2 Wireless</h3>
+               <ul class="btm_pro_detail">
+                  <li class="rating">
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                  </li>
+                  <li>
+                     <h2>$ 229</h2>
+                  </li>
+                  <li></li>
+                  <li>
+                     <a href="" class="add_cart_btn"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+                  </li>
+               </ul>
+            </span>
+         </div>
+         <div class="each_product">
+            <a href=""><span class="pro_img"><img src="images/product_04.png" alt="product" class="img-responsive"></span></a>
+            <span class="pro_detail">
+               <h3>Zook Rocker 2 Wireless</h3>
+               <ul class="btm_pro_detail">
+                  <li class="rating">
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                  </li>
+                  <li>
+                     <h2>$ 229</h2>
+                  </li>
+                  <li></li>
+                  <li>
+                     <a href="" class="add_cart_btn"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+                  </li>
+               </ul>
+            </span>
+         </div>
+         <div class="each_product">
+            <a href=""><span class="pro_img"><img src="images/product_01.png" alt="product" class="img-responsive"></span></a>
+            <span class="pro_detail">
+               <h3>Zook Rocker 2 Wireless</h3>
+               <ul class="btm_pro_detail">
+                  <li class="rating">
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                  </li>
+                  <li>
+                     <h2>$ 229</h2>
+                  </li>
+                  <li></li>
+                  <li>
+                     <a href="" class="add_cart_btn"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+                  </li>
+               </ul>
+            </span>
+         </div>
+         <div class="each_product">
+            <a href=""><span class="pro_img"><img src="images/product_02.png" alt="product" class="img-responsive"></span></a>
+            <span class="pro_detail">
+               <h3>Zook Rocker 2 Wireless</h3>
+               <ul class="btm_pro_detail">
+                  <li class="rating">
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                  </li>
+                  <li>
+                     <h2>$ 229</h2>
+                  </li>
+                  <li></li>
+                  <li>
+                     <a href="" class="add_cart_btn"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+                  </li>
+               </ul>
+            </span>
+         </div>
+         <div class="each_product">
+            <a href=""><span class="pro_img"><img src="images/product_03.png" alt="product" class="img-responsive"></span></a>
+            <span class="pro_detail">
+               <h3>Zook Rocker 2 Wireless</h3>
+               <ul class="btm_pro_detail">
+                  <li class="rating">
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                  </li>
+                  <li>
+                     <h2>$ 229</h2>
+                  </li>
+                  <li></li>
+                  <li>
+                     <a href="" class="add_cart_btn"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+                  </li>
+               </ul>
+            </span>
+         </div>
+         <div class="each_product">
+            <a href=""><span class="pro_img"><img src="images/product_04.png" alt="product" class="img-responsive"></span></a>
+            <span class="pro_detail">
+               <h3>Zook Rocker 2 Wireless</h3>
+               <ul class="btm_pro_detail">
+                  <li class="rating">
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                  </li>
+                  <li>
+                     <h2>$ 229</h2>
+                  </li>
+                  <li></li>
+                  <li>
+                     <a href="" class="add_cart_btn"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+                  </li>
+               </ul>
+            </span>
+         </div>
+      </div>
+   </div>
+</section>
+<section class="carousel_product_holder">
+   <div class="container">
+      <h1>You Might Be Interest In</h1>
+      <div class="responsive">
+         <div class="each_product">
+            <a href=""><span class="pro_img"><img src="images/product_02.png" alt="product" class="img-responsive"></span></a>
+            <span class="pro_detail">
+               <h3>Zook Rocker 2 Wireless</h3>
+               <ul class="btm_pro_detail">
+                  <li class="rating">
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                  </li>
+                  <li>
+                     <h2>$ 229</h2>
+                  </li>
+                  <li></li>
+                  <li>
+                     <a href="" class="add_cart_btn"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+                  </li>
+               </ul>
+            </span>
+         </div>
+         <div class="each_product">
+            <a href=""><span class="pro_img"><img src="images/product_01.png" alt="product" class="img-responsive"></span></a>
+            <span class="pro_detail">
+               <h3>Zook Rocker 2 Wireless</h3>
+               <ul class="btm_pro_detail">
+                  <li class="rating">
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                  </li>
+                  <li>
+                     <h2>$ 229</h2>
+                  </li>
+                  <li></li>
+                  <li>
+                     <a href="" class="add_cart_btn"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+                  </li>
+               </ul>
+            </span>
+         </div>
+         <div class="each_product">
+            <a href=""><span class="pro_img"><img src="images/product_03.png" alt="product" class="img-responsive"></span></a>
+            <span class="pro_detail">
+               <h3>Zook Rocker 2 Wireless</h3>
+               <ul class="btm_pro_detail">
+                  <li class="rating">
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                  </li>
+                  <li>
+                     <h2>$ 229</h2>
+                  </li>
+                  <li></li>
+                  <li>
+                     <a href="" class="add_cart_btn"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+                  </li>
+               </ul>
+            </span>
+         </div>
+         <div class="each_product">
+            <a href=""><span class="pro_img"><img src="images/product_02.png" alt="product" class="img-responsive"></span></a>
+            <span class="pro_detail">
+               <h3>Zook Rocker 2 Wireless</h3>
+               <ul class="btm_pro_detail">
+                  <li class="rating">
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                  </li>
+                  <li>
+                     <h2>$ 229</h2>
+                  </li>
+                  <li></li>
+                  <li>
+                     <a href="" class="add_cart_btn"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+                  </li>
+               </ul>
+            </span>
+         </div>
+         <div class="each_product">
+            <a href=""><span class="pro_img"><img src="images/product_03.png" alt="product" class="img-responsive"></span></a>
+            <span class="pro_detail">
+               <h3>Zook Rocker 2 Wireless</h3>
+               <ul class="btm_pro_detail">
+                  <li class="rating">
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                  </li>
+                  <li>
+                     <h2>$ 229</h2>
+                  </li>
+                  <li></li>
+                  <li>
+                     <a href="" class="add_cart_btn"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+                  </li>
+               </ul>
+            </span>
+         </div>
+         <div class="each_product">
+            <a href=""><span class="pro_img"><img src="images/product_04.png" alt="product" class="img-responsive"></span></a>
+            <span class="pro_detail">
+               <h3>Zook Rocker 2 Wireless</h3>
+               <ul class="btm_pro_detail">
+                  <li class="rating">
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                  </li>
+                  <li>
+                     <h2>$ 229</h2>
+                  </li>
+                  <li></li>
+                  <li>
+                     <a href="" class="add_cart_btn"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+                  </li>
+               </ul>
+            </span>
+         </div>
+         <div class="each_product">
+            <a href=""><span class="pro_img"><img src="images/product_01.png" alt="product" class="img-responsive"></span></a>
+            <span class="pro_detail">
+               <h3>Zook Rocker 2 Wireless</h3>
+               <ul class="btm_pro_detail">
+                  <li class="rating">
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                  </li>
+                  <li>
+                     <h2>$ 229</h2>
+                  </li>
+                  <li></li>
+                  <li>
+                     <a href="" class="add_cart_btn"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+                  </li>
+               </ul>
+            </span>
+         </div>
+         <div class="each_product">
+            <a href=""><span class="pro_img"><img src="images/product_02.png" alt="product" class="img-responsive"></span></a>
+            <span class="pro_detail">
+               <h3>Zook Rocker 2 Wireless</h3>
+               <ul class="btm_pro_detail">
+                  <li class="rating">
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                  </li>
+                  <li>
+                     <h2>$ 229</h2>
+                  </li>
+                  <li></li>
+                  <li>
+                     <a href="" class="add_cart_btn"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+                  </li>
+               </ul>
+            </span>
+         </div>
+         <div class="each_product">
+            <a href=""><span class="pro_img"><img src="images/product_03.png" alt="product" class="img-responsive"></span></a>
+            <span class="pro_detail">
+               <h3>Zook Rocker 2 Wireless</h3>
+               <ul class="btm_pro_detail">
+                  <li class="rating">
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                  </li>
+                  <li>
+                     <h2>$ 229</h2>
+                  </li>
+                  <li></li>
+                  <li>
+                     <a href="" class="add_cart_btn"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+                  </li>
+               </ul>
+            </span>
+         </div>
+         <div class="each_product">
+            <a href=""><span class="pro_img"><img src="images/product_04.png" alt="product" class="img-responsive"></span></a>
+            <span class="pro_detail">
+               <h3>Zook Rocker 2 Wireless</h3>
+               <ul class="btm_pro_detail">
+                  <li class="rating">
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star rated" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                     <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                  </li>
+                  <li>
+                     <h2>$ 229</h2>
+                  </li>
+                  <li></li>
+                  <li>
+                     <a href="" class="add_cart_btn"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+                  </li>
+               </ul>
+            </span>
+         </div>
+      </div>
+   </div>
+</section>
+<section class="app_download_holder">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="mbl_img_holdr">
+               <img src="images/mbl.png" alt="">
+            </div>
+         </div>
+         <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="app_detail_holder">
+               <h1>Download <br> <b>nexhop App</b> Now</h1>
+               <p>Fast, Simple &amp; Delightful. All it takes is 30 seconds to Download.</p>
+               <ul>
+                  <li><a href=""><img src="images/app_btn.png" alt=""></a></li>
+                  <li><a href=""><img src="images/win_store.png" alt=""></a></li>
+                  <li><a href=""><img src="images/play_btn.png" alt=""></a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<section class="feature_holder">
+   <div class="container">
+      <ul>
+         <li>
+            <span><img src="images/lock.png" alt=""></span>
+            <span>
+               <p><b>100% Secure<br></b> Payments</p>
+            </span>
+         </li>
+         <li>
+            <span><img src="images/badge.png" alt=""></span>
+            <span>
+               <p><b>Trust<br></b>Pay</p>
+            </span>
+         </li>
+         <li>
+            <span><img src="images/phone.png" alt=""></span>
+            <span>
+               <p><b>Help<br></b>Center</p>
+            </span>
+         </li>
+         <li>
+            <span><img src="images/mobile.png" alt=""></span>
+            <span>
+               <p><b>Shop<br></b> on the Go</p>
+            </span>
+         </li>
+      </ul>
+   </div>
+</section>
+<script>
+    function imgError(image) {
+        image.onerror = "";
+        image.src = "/images/product_03.png";
+        return true;
+    }
+
+    function bannerError(image) {
+        image.onerror = "";
+        image.src = "/images/banner.jpg";
+        return true;
+    }
+</script>

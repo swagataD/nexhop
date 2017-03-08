@@ -1,0 +1,327 @@
+<div class="site_container" id="page">
+<section class="top_header">
+   <!-- top header -->
+   <div class="container">
+      <div class="row">
+         <a href="#menu" class="m_menu"><span><i class="fa fa-bars"></i></span></a>
+         <nav id="menu">
+            <ul>
+               <li><a href="#">Book</a></li>
+               <li>
+                  <span>Kitchen Appliances</span>
+                  <ul>
+                     <li><a href="">Toaster</a></li>
+                     <li>
+                        <span>Slow cooker</span>
+                        <ul>
+                           <li><a href="">Cooker One</a></li>
+                           <li><a href="">Cooker Two</a></li>
+                           <li><a href="">Cooker Three</a></li>
+                        </ul>
+                     </li>
+                     <li><a href="">Cooker</a></li>
+                  </ul>
+               </li>
+               <li><a href="">Home Decore</a></li>
+               <li><a href="">Mobiles</a></li>
+               <li><a href="">Tablets</a></li>
+               <li><a href="">Toys</a></li>
+            </ul>
+         </nav>
+         <div class="col-md-3 col-sm-4 col-xs-12">
+            <span>Latest Online Shooping Destination</span>
+         </div>
+         <div class="col-md-9 col-sm-8 col-xs-12">
+            <div class="right_action_holder">
+               <ul>
+                  <li><a href=""><span><i class="fa fa-heart" aria-hidden="true"></i></span>My Order</a></li>
+                  <li><a href=""><span><i class="fa fa-bookmark" aria-hidden="true"></i></span>Sale On Nexhop</a></li>
+                  <li><a href=""><span><i class="fa fa-download" aria-hidden="true"></i></span>Download App</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- top header -->
+<section class="bottom_header">
+   <!-- bottom header -->
+   <div class="container">
+      <div class="row">
+         <div class="col-md-1 col-sm-2 col-xs-3">
+            <div class="logo_holder">
+               <a href="<%=sails.config.globals.siteGeneral.baseUrl%>"><img src="/images/logo.png" alt="logo"></a>
+            </div>
+         </div>
+         <div class="col-md-1">
+            <div class="cat_menu">
+               <div id="navbar">
+                  <nav class="navbar navbar-default navbar-static-top" role="navigation">
+                     <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                           <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span><i class="fa fa-bars" aria-hidden="true"></i></span></a> 
+                              <ul class="dropdown-menu">
+                                 <li class="kopie"><a href="#">All Items</a></li>
+                                 <li><a href="#">Books</a></li>
+                                 <li><a href="#">Mobiles</a></li>
+                                 <li><a href="#">Tablets</a></li>
+                                 <li class="dropdown dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown Link 4</a>
+                                    <ul class="dropdown-menu">
+                                       <li class="kopie"><a href="#">Dropdown Link 4</a></li>
+                                       <li><a href="#">Dropdown Submenu Link 4.1</a></li>
+                                       <li><a href="#">Dropdown Submenu Link 4.2</a></li>
+                                       <li><a href="#">Dropdown Submenu Link 4.3</a></li>
+                                       <li><a href="#">Dropdown Submenu Link 4.4</a></li>
+                                    </ul>
+                                 </li>
+                                 <li class="dropdown dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown Link 5</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="kopie"><a href="#">Dropdown Link 5</a></li>
+                                        <li><a href="#">Dropdown Submenu Link 5.1</a></li>
+                                        <li><a href="#">Dropdown Submenu Link 5.2</a></li>
+                                        <li><a href="#">Dropdown Submenu Link 5.3</a></li>
+                                        <li class="dropdown dropdown-submenu">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown Submenu Link 5.4</a>
+                                            <ul class="dropdown-menu">
+                                                <li class="kopie"><a href="#">Dropdown Submenu Link 5.4</a></li>
+                                                <li><a href="#">Dropdown Submenu Link 5.4.1</a></li>
+                                                <li><a href="#">Dropdown Submenu Link 5.4.2</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- /.navbar-collapse -->
+                  </nav>
+               </div>
+            </div>
+         </div>
+         <!--<div class="col-xs-9">
+            <div class="small_acnt_holder">
+               <ul>
+                  <li><a href="<%=sails.config.globals.siteGeneral.baseUrl%>/cart-detail"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>Cart</a></li>
+                  <li><a href=""><span><i class="fa fa-sign-in" aria-hidden="true"></i></span>Sign In</a></li>
+               </ul>
+            </div>
+         </div>-->
+         <div class="col-md-6 col-sm-7 col-xs-12">
+            <div class="search_holder">
+               <input type="search" name="" placeholder="Search Products or Brands">
+               <button class="btn blue_btn"><span><i class="fa fa-search" aria-hidden="true"></i></span>Search</button>
+            </div>
+         </div>
+         <div class="col-md-4 col-sm-3">
+            <div class="accout_holder">
+                <ul>
+                <%if(!!req.userDetails.userId){%>
+                    <li><a> Hi, <%=req.userDetails.name%></a></li>
+                    <li><a href="<%=sails.config.globals.siteGeneral.baseUrl%>/cart-detail"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>Cart</a></li>  
+                    <li><a href="#" onclick="ub.getLogout()"><span><i class="fa fa-sign-in" aria-hidden="true"></i></span>Sign out</a></li>
+                <%} else {%>
+                    <li><a href="#myModal" data-toggle="modal"><span><i class="fa fa-sign-in" aria-hidden="true"></i></span>Sign In</a></li>
+                <%}%>
+                </ul>
+                <!--<ul>
+                   <li><a href="<%=sails.config.globals.siteGeneral.baseUrl%>/cart-detail"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>Cart</a></li>
+                   <li><a href="#myModal" data-toggle="modal"><span><i class="fa fa-sign-in" aria-hidden="true"></i></span>Sign In</a></li>
+                </ul>-->
+               
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- bottom header -->
+<hr>
+
+
+<!-- Trigger the modal with a button 
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+         <div class="logmod">
+  <div class="logmod__wrapper">
+    <span class="logmod__close">Close</span>
+    <div class="logmod__container">
+      <ul class="logmod__tabs">
+        <li data-tabtar="lgm-2"><a href="#">Login</a></li>
+        <li data-tabtar="lgm-1"><a href="#">Sign Up</a></li>
+      </ul>
+      <div class="logmod__tab-wrapper">
+      <div class="logmod__tab lgm-1">
+        <div class="logmod__heading">
+          <span class="logmod__heading-subtitle">Enter your personal details <strong>to create an acount</strong></span>
+        </div>
+        <div class="logmod__form">
+          <form accept-charset="utf-8" action="/" class="simform" method="post" id="js-user-signup-form">
+             <div class="field_row">
+             
+              <div class="sminputs">
+              <div class="input full">
+                <label class="string optional" for="user-name">First Name*</label>
+                <input class="string optional" maxlength="255" id="user-fn" placeholder="First Name" type="text" size="50" name="firstName"/>
+              </div>
+            </div>
+            
+            <div class="sminputs">
+              <div class="input full">
+                <label class="string optional" for="user-name">Last Name*</label>
+                <input class="string optional" maxlength="255" id="user-ln" placeholder="Last Name" type="text" size="50" name="lastName"/>
+              </div>
+            </div>
+            
+           </div>
+           
+            <div class="sminputs">
+              <div class="input full">
+                <label class="string optional" for="user-name">Email*</label>
+                <input class="string optional" maxlength="255" id="user-email" placeholder="Email" type="email" size="50" name="emailAddress"/>
+              </div>
+            </div>
+            <div class="sminputs">
+              <div class="input string optional">
+                <label class="string optional" for="user-pw">Password *</label>
+                <input class="string optional" maxlength="255" id="user-pw" placeholder="Password" type="text" size="50" name="password"/>
+              </div>
+              <!--<div class="input string optional">
+                <label class="string optional" for="user-pw-repeat">Repeat password *</label>
+                <input class="string optional" maxlength="255" id="user-pw-repeat" placeholder="Repeat password" type="text" size="50" name=""/>
+              </div>-->
+            </div>
+            <div class="simform__actions">
+              <input class="sumbit" name="commit" type="submit" value="Create Account" />
+              <span class="simform__actions-sidetext">By creating an account you agree to our <a class="special" href="#" target="_blank" role="link">Terms & Privacy</a></span>
+            </div> 
+          </form>
+        </div> 
+        <div class="logmod__alter">
+          <div class="logmod__alter-container">
+           <!-- <a href="#" class="connect facebook">
+              <div class="connect__icon">
+                <i class="fa fa-facebook"></i>
+              </div>
+              <div class="connect__context">
+                <span>Create an account with <strong>Facebook</strong></span>
+              </div>
+            </a>
+              
+            <a href="#" class="connect googleplus">
+              <div class="connect__icon">
+                <i class="fa fa-google-plus"></i>
+              </div>
+              <div class="connect__context">
+                <span>Create an account with <strong>Google+</strong></span>
+              </div>
+            </a>-->
+          </div>
+        </div>
+      </div>
+      <div class="logmod__tab lgm-2">
+        <div class="logmod__heading">
+          <span class="logmod__heading-subtitle">Enter your email and password <strong>to sign in</strong></span>
+        </div> 
+        <div class="logmod__form">
+          <form accept-charset="utf-8" action="/" class="simform" id="js-user-login-form">
+           
+            <div class="sminputs">
+              <div class="input full">
+                <label class="string optional" for="user-name">Email*</label>
+                <input class="string optional" maxlength="255" id="user-email" placeholder="Email" type="email" size="50" name="emailAddress"/>
+              </div>
+            </div>
+          
+            <div class="sminputs">
+              <div class="input full">
+                <label class="string optional" for="user-pw">Password *</label>
+                <input class="string optional" maxlength="255" id="user-pw" placeholder="Password" type="password" size="50" name="password"/>
+                						<span class="hide-password">Show</span>
+              </div>
+            </div>
+            <div class="simform__actions">
+              <input class="sumbit" name="commit" type="submit" value="Log In" />
+              <span class="simform__actions-sidetext"><a class="special" role="link" href="#" id="js-forget-password">Forgot your password?<br>Click here</a></span>
+            </div> 
+          </form>
+        </div> 
+        <div class="logmod__alter">
+            
+          <div class="logmod__alter-container" id="js-user-login-fb" >
+            <a href="#" class="connect facebook">
+              <div class="connect__icon">
+                <i class="fa fa-facebook"></i>
+              </div>
+              <div class="connect__context">
+                <span>Sign in with <strong>Facebook</strong></span>
+              </div>
+            </a>
+           <!-- <a href="#" class="connect googleplus">
+              <div class="connect__icon">
+                <i class="fa fa-google-plus"></i>
+              </div>
+              <div class="connect__context">
+                <span>Sign in with <strong>Google+</strong></span>
+              </div>
+            </a>-->
+          </div>
+        </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+     
+    </div>
+
+  </div>
+</div>
+<script>/*
+function fbcall(){
+    //alert();
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '260410697741483',
+            xfbml      : true,
+            version    : 'v2.8'
+        });
+
+        FB.getLoginStatus(function(response) {
+            if (response.status === 'connected') {
+                alert('Logged in.');
+                console.log('Logged in. response');
+                console.log(response);
+            }
+            else {
+                console.log('Logged in. response');
+                console.log(response);
+                FB.login();
+            }
+        });
+        FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+});*/
+
+</script>

@@ -1,0 +1,121 @@
+@media screen and (max-width: 1024px) {
+	.container{
+		width: 95%;
+	}
+	.bottom_header .accout_holder ul li a{
+		padding: 25px 15px;
+	}
+	.rating span i{
+		font-size: 10px;
+	}
+}
+
+
+@media screen and (max-width: 980px) {
+	.product_holder .product_item_04 li.each_product {
+    margin-right: 2%;
+    margin-top: 18px;
+    width: 48%;
+	}
+	.accout_holder ul li a span{
+		display: block;
+		text-align: center;
+	}
+	.bottom_header .accout_holder ul li a span i{
+		margin-right: 0px;
+	}
+	.right_banner_holder .col-sm-9{
+		padding-right: 0px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.top_header .col-xs-12{
+		text-align: center;
+	}
+	.top_header .right_action_holder{
+		float: none;
+		height: auto;
+		overflow: hidden;
+	}
+	.top_header .right_action_holder ul{
+		margin: 0 auto;
+		height: auto;
+		overflow: hidden;
+		display: inline-block;
+		margin-top: 15px;
+	}
+	.accout_holder{
+		display: none;
+	}
+	.bottom_header{
+		padding-bottom: 15px;
+	}
+	.bottom_header .search_holder{
+		margin-top: 10px;
+	}
+	.small_acnt_holder{
+		display: block;
+	}
+	.app_download_holder .mbl_img_holdr{
+		display: table;
+		padding: 50px;
+		margin: 0 auto;
+		padding-bottom: 10px;
+	}
+	.app_download_holder .app_detail_holder{
+		text-align: center;
+	}
+	.app_detail_holder ul{
+		margin: 0 auto;
+	}
+	.feature_holder img{
+		width: 50px;
+		height: 50px;
+	}
+	.left_item_holder{
+		display: none;
+	}
+	.m_menu{
+		display: block;
+	}
+	.right_banner_holder{
+		width: 100% !important;
+	}
+	.app_download_holder{
+		padding-top: 0px;
+	}
+	.feature_holder ul{
+		display: block;
+	}
+	.feature_holder ul li{
+		display: block;
+		width: 100%;
+		padding-top: 10px;
+		border-right: 0px;
+		padding-bottom: 10px;
+		border-bottom: 1px solid #f1f1f1;
+		height: auto;
+	}
+	.feature_holder ul li:after{
+		display: none;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.m_menu{
+		top: -4px;
+	}
+	.mm-opening .mm-slideout {
+    transform: translate3d(50%, 0px, 0px) !important;
+	}
+	.mm-menu.mm-offcanvas{
+		width: 50% !important;
+	}
+	.social_holder{
+		display: table;
+		margin: 0 auto;
+		margin-top: 10px;
+		float: none;
+	}
+}
